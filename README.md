@@ -25,6 +25,26 @@
 ## 1. 快速开始
 
 ```powershell
+pip install uv
+安装
+uv pip install --python "C:\Users\lysjc\AppData\Local\Programs\Python\Python313\python.exe" "mineru>=4.0,<5"
+
+卸载
+uv pip uninstall --python "C:\Users\lysjc\AppData\Local\Programs\Python\Python313\python.exe" mineru
+
+ # 2. 验证
+      mineru-kit --version
+
+      # 3. 模型（仅当第 3 步缺失时才需要）
+      mineru-kit models verify
+      mineru-kit models download --tier basic -s modelscope
+      mineru-kit models download --tier basic
+      mineru-kit models download --tier standard -s modelscope
+
+      # 4. 试跑
+      对文件操作：          mineru-kit parse document.pdf -o document.md --tier standard
+      直接对目录进行操作：   mineru-kit parse tpdf --tier basic -o ttpdf
+
 # 前置：安装 MinerU（见第 7 章）
 pip install mineru
 
